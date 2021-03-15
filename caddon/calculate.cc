@@ -4,7 +4,6 @@
 #define ul unsigned long
 
 using namespace std;
-
 int demo(int x){
     return x+111;
 }
@@ -234,18 +233,15 @@ vector<ul> compress(vector<ul> block, vector<ul> &H)
 
 string to_hex_(ul input)
 {
-	bitset<64> b(input & 0xffffffff);
-    int a = (unsigned int)b.to_ulong();
+	bitset<32> bs(input);
+	unsigned n = bs.to_ulong();
 
-    std::stringstream stream;
-    stream << std::hex << a;
-    std::string result( stream.str() );
+	stringstream sstream;
+	sstream << std::hex << std::setw(8) << std::setfill('0') << n;
+	string temp;
+	sstream >> temp;
 
-    int cnt = 8-result.length();
-
-    while(cnt--) result='0'+result;
-
-    return result;
+	return temp;
 }
 
 
