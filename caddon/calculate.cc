@@ -233,15 +233,18 @@ vector<ul> compress(vector<ul> block, vector<ul> &H)
 
 string to_hex_(ul input)
 {
-	bitset<32> bs(input);
-	unsigned n = bs.to_ulong();
+	bitset<64> b(input & 0xffffffff);
+    int a = (unsigned int)b.to_ulong();
 
-	stringstream sstream;
-	sstream << std::hex << std::setw(8) << std::setfill('0') << n;
-	string temp;
-	sstream >> temp;
+    std::stringstream stream;
+    stream << std::hex << a;
+    std::string result( stream.str() );
 
-	return temp;
+    int cnt = 8-result.length();
+
+    while(cnt--) result='0'+result;
+
+    return result;
 }
 
 
