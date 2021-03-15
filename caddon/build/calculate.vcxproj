@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CC8574CD-AD4E-8232-3426-16E5DA6952C5}</ProjectGuid>
+    <ProjectGuid>{C53864D9-7E17-E32D-D128-7CCDCBA9CB44}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>calculate</RootNamespace>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
